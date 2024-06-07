@@ -37,15 +37,15 @@ public class FormServlet extends HttpServlet {
             throws IOException {
 
         response.setContentType("text/html");    // Response mime type
-
-        // Output stream to STDOUT
+//
+//        // Output stream to STDOUT
         PrintWriter out = response.getWriter();
-
-        // Building page head with title
-        out.println("<html><head><title>MovieDBExample: Found Records</title></head>");
-
-        // Building page body
-        out.println("<body><h1>MovieDBExample: Found Records</h1>");
+//
+//        // Building page head with title
+//        out.println("<html><head><title>MovieDBExample: Found Records</title></head>");
+//
+//        // Building page body
+//        out.println("<body><h1>MovieDBExample: Found Records</h1>");
 
 
         try {
@@ -105,5 +105,10 @@ public class FormServlet extends HttpServlet {
             return;
         }
         out.close();
+    }
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws IOException{
+            doGet(request, response); //just calling doGET
+        //POST provides protection and can be longer (get has length restrictions)
     }
 }
